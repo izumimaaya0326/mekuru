@@ -1,20 +1,27 @@
 class PicturesController < ApplicationController
 	def show
-    @pictures = Post.all
+  end
+
+  def index
+    @pictures = Picture.all
   end
 
   def new
-    @picture = Post.new
+    @picture = Picture.new
   end
 
+
   def create
-    @picture = Post.new(permit_params)
-    @picture.save!
-    redirect_to action: 'show'
+    @picture = Picture.new(picture_params)
+    if @picture.save
+      redirect_to pictures_path
+    else
+      render 'new'
+    end
   end
 
   private
-    def permit_params
-      params.require(:picture).permit(:image)
+    def picture_params
+      params.require(:picture).permit({images: []})
     end
 end

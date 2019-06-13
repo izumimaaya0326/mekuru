@@ -1,8 +1,0 @@
-<% @pictures.each do |picture| %>
-    <%= image_tag picture.image.url %>
-<% end %>
-<hr>
-<%= form_for :picture, url: 'pictures/create'  do |f| %>
-  <p><%=f.label "画像をアップロード" %><br><%= f.file_field :image %></p>
-  <p><%= f.submit value: '投稿' %></p>
-<% end %>
