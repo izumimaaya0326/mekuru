@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @album.caption %>
+</p>
+
+<%= link_to '編集する', edit_album_path(@album) %> |
+<%= link_to '戻る', albums_path %>

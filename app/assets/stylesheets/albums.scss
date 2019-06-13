@@ -1,0 +1,24 @@
+// Place all the styles related to the Albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box-list{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+}
+.box-list li{
+  flex: 0 0 19%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.main-visual-content{
+  width: 350px; /* 横幅を指定 */
+  height: 300px; /* 親の高さに揃える */
+  background-color: gold; /* 背景色 */
+}

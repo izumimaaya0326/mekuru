@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Albums</h1>
+
+<!-- <ul class="box-list">
+  <li>
+    <div class="main-visual-content"></div>
+      <h2>Title</h2>
+      <p>Caption</p>
+  </li>
+  <ul class="box-list">
+  <li>
+    <div class="main-visual-content"></div>
+      <h2>Title</h2>
+      <p>Caption</p>
+  </li>
+
+  <li>
+    <div class="main-visual-content"></div>
+      <h2>Title</h2>
+      <p>Caption</p>
+  </li>
+
+  <li>
+    <div class="main-visual-content"></div>
+      <h2>Title</h2>
+      <p>Caption</p>
+  </li>
+
+  <li>
+    <div class="main-visual-content"></div>
+      <h2>Title</h2>
+      <p>Caption</p>
+  </li>
+
+  <li>
+    <div class="main-visual-content"></div>
+      <h2>Title</h2>
+      <p>Caption</p>
+  </li>
+ </ul> -->
+
+
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <ul class="box-list">
+       <li>
+         <div class="main-visual-content"></div>
+           <h2><%= album.title %></h2>
+           <p><%= album.caption %></p>
+       </li>
+      </ul>
+        <td><%= link_to '詳細', album %></td>
+        <td><%= link_to '編集する', edit_album_path(album) %></td>
+        <td><%= link_to '削除', album, method: :delete, data: { confirm: 'アルバムを削除しますか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しいアルバムを作る', new_album_path %>
